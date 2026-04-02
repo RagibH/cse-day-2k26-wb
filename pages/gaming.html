@@ -54,6 +54,19 @@
       padding: 5px;
       background: #000;
       box-shadow: 0 0 15px rgba(184, 26, 68, 0.4);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .chess-wizard-card .hub-logo {
+      animation: chessMagic 6s infinite ease-in-out;
+      transform: rotate(2deg);
+    }
+
+    @keyframes chessMagic {
+      0%, 100% { transform: rotate(2deg) scale(1); filter: hue-rotate(0deg); }
+      25% { transform: rotate(-8deg) scale(1.05); filter: hue-rotate(12deg); }
+      50% { transform: rotate(6deg) scale(1.1); filter: hue-rotate(28deg); }
+      75% { transform: rotate(-4deg) scale(1.03); filter: hue-rotate(8deg); }
     }
 
     .game-card-hub h3 {
@@ -122,7 +135,7 @@
       <div class="hub-grid explorer-grid">
         <!-- Animated Floating Cards (Restored) -->
         <div class="game-card-hub detail-card reveal">
-          <img src="../images/fifa_logo.png" alt="FIFA 19" class="hub-logo" style="border-radius: 50%;" onerror="this.src='../images/fifa_magic.png'">
+          <img src="../images/fifa logo.png" alt="FIFA 19" class="hub-logo" style="border-radius: 50%;" onerror="this.src='../images/fifa_magic.png'">
           <h3>FIFA 19</h3>
           <p>The ultimate football duel (Solo)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -136,7 +149,7 @@
 
         <!-- PES Card -->
         <div class="game-card-hub detail-card">
-          <img src="../images/pes_logo.png" alt="PES Mobile" class="hub-logo" style="border-radius: 50%;" onerror="this.src='../images/pes_magic.png'">
+          <img src="../images/pes logo.png" alt="PES Mobile" class="hub-logo" style="border-radius: 50%;" onerror="this.src='../images/pes_magic.png'">
           <h3>PES Mobile</h3>
           <p>Mobile football mastery (Solo)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -150,7 +163,7 @@
 
         <!-- PUBG Card -->
         <div class="game-card-hub detail-card reveal">
-          <img src="../images/pubg_logo.png" alt="PUBG Mobile" class="hub-logo" style="border-radius: 50%;" onerror="this.src='../images/pubg_magic.png'">
+          <img src="../images/pubg logo.png" alt="PUBG Mobile" class="hub-logo" style="border-radius: 50%;" onerror="this.src='../images/pubg_magic.png'">
           <h3>PUBG Mobile</h3>
           <p>Squad Combat (4 Players | 200 BDT/Team)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -163,10 +176,10 @@
         </div>
 
         <!-- Chess Card -->
-        <div class="game-card-hub detail-card reveal">
-          <img src="../images/chess_logo.png" alt="Wizard's Chess" class="hub-logo" style="border-radius: 50%;" onerror="this.src='https://placehold.co/120x120/000/ff1a4f?text=%E2%99%9E'">
-          <h3>Wizard's Chess</h3>
-          <p>Tactical Intellect (Solo Blitz)</p>
+        <div class="game-card-hub detail-card reveal chess-wizard-card">
+          <img src="../images/chess_logo.png" alt="Chess Wizard" class="hub-logo" style="border-radius: 50%;" onerror="this.src='https://placehold.co/120x120/000/ff1a4f?text=%E2%99%9E'">
+          <h3>Chess Wizard</h3>
+          <p>Mystical Blitz Mind Duel (Random Spell Pairings)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
             <a href="https://forms.gle/GVWqc3Bn99wPFWfNA" class="register-btn"
               style="padding:10px 20px; font-size:0.85rem; text-decoration:none;" target="_blank">⚔️ Register</a>
