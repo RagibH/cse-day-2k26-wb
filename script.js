@@ -9,24 +9,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const navOverlay = document.getElementById('navOverlay');
     const closeMenu = document.getElementById('closeMenu');
 
+    function closeNav() {
+        if (!navMenu || !navOverlay) return;
+        navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function openNav() {
+        if (!navMenu || !navOverlay) return;
+        navMenu.classList.add('active');
+        navOverlay.classList.add('active');
+        if (hamburger) hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
     function toggleMenu() {
         if (!navMenu || !navOverlay) return;
-        const isActive = navMenu.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        if (hamburger) hamburger.classList.toggle('active');
-        
-        // Lock/Unlock Scroll
-        document.body.style.overflow = isActive ? 'hidden' : '';
+        if (navMenu.classList.contains('active')) closeNav();
+        else openNav();
     }
 
     if (hamburger) hamburger.addEventListener('click', toggleMenu);
-    if (navOverlay) navOverlay.addEventListener('click', toggleMenu);
-    if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
+    if (navOverlay) navOverlay.addEventListener('click', closeNav);
+    if (closeMenu) closeMenu.addEventListener('click', closeNav);
 
     // Auto-close menu when clicking a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            if (navMenu && navMenu.classList.contains('active')) toggleMenu();
+            if (navMenu && navMenu.classList.contains('active')) closeNav();
+        });
+    });
+
+    // Register button special actions (external forms)
+    document.querySelectorAll('.register-btn[data-href]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const url = button.getAttribute('data-href');
+            if (!url) return;
+            window.open(url, '_blank', 'noopener');
         });
     });
 
