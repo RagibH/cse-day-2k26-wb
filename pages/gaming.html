@@ -122,8 +122,9 @@
       <div class="hub-grid explorer-grid">
         <!-- Animated Floating Cards (Restored) -->
         <div class="game-card-hub detail-card reveal">
-          <img src="../images/fifa_magic.png" alt="FIFA" class="hub-logo"
-            onerror="this.src='https://placehold.co/120x120/3e2723/ff1a4f?text=FIFA'">
+          <div class="hub-logo" style="background: linear-gradient(135deg, #ff1a4f, #b81a44); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; border: none;">
+            ⚽🔮
+          </div>
           <h3>FIFA 19</h3>
           <p>The ultimate football duel (Solo)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -137,8 +138,9 @@
 
         <!-- PES Card -->
         <div class="game-card-hub detail-card">
-          <img src="../images/pes_magic.png" alt="PES" class="hub-logo"
-            onerror="this.src='https://placehold.co/120x120/3e2723/ff1a4f?text=PES'">
+          <div class="hub-logo" style="background: linear-gradient(135deg, #4a90e2, #357abd); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; border: none;">
+            🏆✨
+          </div>
           <h3>PES Mobile</h3>
           <p>Mobile football mastery (Solo)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -152,8 +154,9 @@
 
         <!-- PUBG Card -->
         <div class="game-card-hub detail-card reveal">
-          <img src="../images/pubg_magic.png" alt="PUBG" class="hub-logo"
-            onerror="this.src='https://placehold.co/120x120/3e2723/ff1a4f?text=PUBG'">
+          <div class="hub-logo" style="background: linear-gradient(135deg, #ff6b35, #e55a2b); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; border: none;">
+            🏹🔥
+          </div>
           <h3>PUBG Mobile</h3>
           <p>Squad Combat (4 Players | 200 BDT/Team)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -167,8 +170,9 @@
 
         <!-- Chess Card -->
         <div class="game-card-hub detail-card reveal">
-          <img src="https://placehold.co/120x120/000/ff1a4f?text=%E2%99%9E" alt="Chess" class="hub-logo"
-            style="background:#000;">
+          <div class="hub-logo" style="background: linear-gradient(135deg, #8b4513, #654321); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; border: none;">
+            ♛🧙‍♂️
+          </div>
           <h3>Wizard's Chess</h3>
           <p>Tactical Intellect (Solo Blitz)</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
@@ -191,39 +195,7 @@
     </footer>
   </div>
 
-  <script>
-    // Mobile Menu Logic
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    const navOverlay = document.getElementById('navOverlay');
-    const closeMenu = document.getElementById('closeMenu');
-
-    function toggleMenu() {
-      navMenu.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-    }
-
-    if (hamburger) hamburger.addEventListener('click', toggleMenu);
-    if (navOverlay) navOverlay.addEventListener('click', toggleMenu);
-    if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
-
-    // Scroll Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      observer.observe(el);
-    });
-  </script>
+  <script src="../script.js"></script>
 </body>
 
 </html>
