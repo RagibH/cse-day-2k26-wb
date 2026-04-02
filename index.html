@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CSE DAY 2K26 | Tech Fest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Home specific minimal tweaks */
+    .hero-content {
+      position: relative;
+      z-index: 5;
+    }
+
+    .countdown-container {
+      margin: 2.5rem auto 0;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .time-group {
+      background: linear-gradient(135deg, rgba(80, 0, 20, 0.7), rgba(20, 5, 25, 0.8));
+      border: 1px solid #c42a4c;
+      box-shadow: 0 0 20px rgba(184, 26, 68, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.6rem 1.2rem;
+      border-radius: 16px;
+      min-width: 80px;
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+
+    .time-group span:first-child {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: monospace;
+      display: block;
+      line-height: 1.2;
+      color: #ff1a4f;
+      text-shadow: 0 0 10px rgba(255, 26, 79, 0.5);
+    }
+
+    .time-label {
+      color: #e0d0e0;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .event-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      font-family: 'Cinzel', serif;
+      margin-bottom: 2.5rem;
+      font-weight: 600;
+      color: #ff1a4f;
+      letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(255, 26, 79, 0.3);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" id="starsContainer"></div>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- THE LEGENDARY FLYING BROOMSTICK -->
+  <div class="broomstick" id="magicBroom">
+    <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 20 C 5 20, 15 15, 30 18 C 45 21, 60 17, 75 20" stroke="#4a2c1d" stroke-width="3" fill="none"
+        stroke-linecap="round" />
+      <path d="M75 20 C 80 15, 95 12, 95 20 C 95 28, 80 25, 75 20" fill="#d4af37" opacity="0.8" />
+      <path d="M72 18 L 98 12 M 72 20 L 98 20 M 72 22 L 98 28" stroke="#f0e68c" stroke-width="0.5" />
+      <rect x="70" y="17" width="3" height="6" rx="1" fill="#8b4513" />
+    </svg>
+  </div>
+
+  <div class="main-wrapper">
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" alt="CSE Society" class="logo-img"
+            onerror="this.src='https://placehold.co/50x50/800000/ffffff?text=CSE'">
+          <span class="logo-text">CSE DAY 2K26</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <div class="close-menu" id="closeMenu">&times;</div>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="pages/programming.html" class="nav-link">Programming</a></li>
+          <li><a href="pages/gaming.html" class="nav-link">Gaming</a></li>
+          <li><a href="pages/integration-bee.html" class="nav-link">Integration Bee</a></li>
+          <li><a href="pages/cultural.html" class="nav-link">Cultural Night</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Legendary Flying Broomstick (Multi-Layered SVG) -->
+      <div class="broomstick" id="magicBroom">
+        <svg viewBox="0 0 512 512" style="filter: drop-shadow(0 0 10px rgba(255,26,79,0.3));">
+          <!-- Handle -->
+          <path
+            d="M480 32c-17.7 0-32 14.3-32 32 0 4.1 1.1 7.9 2.9 11.4L208.6 317.7c-5.5-2.4-11.6-3.7-18.1-3.7-23.4 0-42.5 19.1-42.5 42.5s19.1 42.5 42.5 42.5 42.5-19.1 42.5-42.5c0-6.5-1.4-12.6-3.7-18.1L472.6 96.9c3.5 1.8 7.3 2.9 11.4 2.9 17.7 0 32-14.3 32-32s-14.3-32-32-32z"
+            fill="#5d2f11" />
+          <!-- Bristles Layer 1 -->
+          <path d="M168 320c-40 0-80 20-100 60-20 40-20 90 10 110s90 10 110-10 20-90-20-160z" fill="#9e7e10" />
+          <!-- Bristles Layer 2 -->
+          <path d="M140 340c-30 0-60 15-75 45-15 30-15 70 5 85s70 5 85-5 15-70-15-125z" fill="#c9a11d" />
+          <!-- Twine -->
+          <rect x="175" y="325" width="40" height="15" rx="5" transform="rotate(-45 175 325)" fill="#b81a44" />
+        </svg>
+      </div>
+
+      <div class="hero-aura"></div>
+      <section class="hp-hero hero reveal" style="text-align:center; padding: 4rem 1.5rem 2rem; position:relative;">
+        <div class="hero-content">
+          <img src="images/event.png" alt="CSE DAY 2K26" class="event-logo"
+            style="max-width:300px; margin: 0 auto; filter: drop-shadow(0 0 25px rgba(255,26,79,0.4)); display:block; animation: subtleFloat 3s infinite ease-in-out;"
+            onerror="this.src='https://placehold.co/300x150/800000/ffffff?text=CSE+DAY+2K26'">
+          <h1 class="hp-title event-title mt-2"
+            style="font-family:'Cinzel', serif; font-size:2.5rem; margin:0.6rem 0 0.8rem; background: linear-gradient(135deg, #f0e0e8, #ff1a4f); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing:2px;">
+            The Grand Magic Returns</h1>
+          <p class="hp-subtitle" style="font-size:1.3rem; color:#e0d0e0; font-style:italic;">"The greatest wizarding
+            tech fest is upon us. Will you answer the call?"</p>
+
+          <div class="countdown-container">
+            <div class="countdown-card" style="display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap;">
+              <div class="time-group"><span id="days">00</span><span class="time-label">Days</span></div>
+              <div class="time-group"><span id="hours">00</span><span class="time-label">Hours</span></div>
+              <div class="time-group"><span id="minutes">00</span><span class="time-label">Minutes</span></div>
+              <div class="time-group"><span id="seconds">00</span><span class="time-label">Seconds</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHOWCASE CARDS SECTION -->
+      <section class="events-section reveal" style="padding: 2rem 1.5rem;">
+        <div class="container" style="max-width:1400px; margin:0 auto;">
+          <h2 class="section-title">✦ Magical Tournaments & Feasts ✦</h2>
+          <div class="events-grid explorer-grid">
+
+            <!-- 1. Programming Contest -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-code" style="font-size: 3.5rem;">💻</span>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif;">Programming Contest</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">Competitive Spellcasting (Batch
+                  16-18)</p>
+                <a href="pages/programming.html" class="register-btn"
+                  style="padding:10px 20px; font-size:0.8rem; text-decoration:none;">Enter Maze</a>
+              </div>
+            </div>
+
+            <!-- 2. Integration Bee -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <div class="live-icon"
+                  style="font-size: 4rem; color:#ff1a4f; font-family: 'Playfair Display', serif; display:inline-block;">
+                  ∫<span class="flying-bee">🐝</span>
+                </div>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif; margin-top:0.5rem;">Integration
+                  Bee</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">Calculus Duel (All Depts)</p>
+                <a href="pages/integration-bee.html" class="register-btn"
+                  style="padding:10px 20px; font-size:0.8rem; text-decoration:none;" target="_blank">Summon Math</a>
+              </div>
+            </div>
+
+            <!-- 3. Gaming Contest -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-game" style="font-size: 3.5rem;">🎮</span>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif;">Gaming Contest</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">FIFA, PES, PUBG, Chess</p>
+                <a href="pages/gaming.html" class="register-btn"
+                  style="padding:10px 20px; font-size:0.8rem; text-decoration:none;">Join Arena</a>
+              </div>
+            </div>
+
+            <!-- 4. Indoor & Outdoor Games -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-sport" style="font-size: 3.5rem;">🏏♟️</span>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif;">Indoor & Outdoor</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">House Games & Physical Feasts</p>
+                <!-- <span class="register-btn" -->
+                <!-- style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.2); padding:10px 20px; font-size:0.8rem; cursor:default; opacity:0.7;">On-site</span> -->
+              </div>
+            </div>
+
+            <!-- 5. Photography Exhibition -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-photo" style="font-size: 3.5rem;">📷</span>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif;">Photography</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">Mystic Visions Exhibition</p>
+                <a href="https://www.facebook.com/share/p/17U1YcgSrh/" class="register-btn"
+                  style="padding:10px 20px; font-size:0.8rem; text-decoration:none;">Submit Photo</a>
+
+                <!-- <span class="register-btn" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.2); padding:10px 20px; font-size:0.8rem; cursor:default; opacity:0.7;">Coming Soon</span> -->
+              </div>
+            </div>
+
+            <!-- 6. SHAPA Day -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-love" style="font-size: 3.5rem;">👩‍❤️‍👨</span>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif;">SHAPA Day</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">Traditional Attire & Magical Bonds
+                </p>
+                <!-- <span class="register-btn" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.2); padding:10px 20px; font-size:0.8rem; cursor:default; opacity:0.7;">April 7</span> -->
+              </div>
+            </div>
+
+            <!-- 7. Cultural Night -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-dance" style="font-size: 3.5rem;">💃🕺</span>
+                <h3 style="color:#ffffff; font-size:1.6rem; font-family:'Cinzel', serif;">Cultural Night</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">A Grand Feast of Performances</p>
+                <a href="pages/cultural.html" class="register-btn"
+                  style="padding:10px 20px; font-size:0.8rem; text-decoration:none;">Join Feast</a>
+              </div>
+            </div>
+
+            <!-- 8. Musical Concert -->
+            <div class="event-card detail-card" style="margin:0; text-align:center;">
+              <div class="card-inner">
+                <span class="live-icon icon-music" style="font-size: 3.5rem;">🎸🎶</span>
+                <h3 style="color:#ffffff; font-size:1.5rem; font-family:'Cinzel', serif;">Musical Concert</h3>
+                <p style="color:#e0d0e0; margin-bottom:1.5rem; font-size:0.95rem;">Unplugged with Pentatone</p>
+                <a href="pages/cultural.html" class="register-btn"
+                  style="padding:10px 20px; font-size:0.8rem; text-decoration:none;">Listen Legend</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ORGANIZER SECTION -->
+      <section class="organizer-section reveal"
+        style="padding: 3rem 1.5rem; text-align: center; max-width:800px; margin:4rem auto; background:rgba(0,0,0,0.4); border-radius:30px; border:1px solid rgba(184,26,68,0.2);">
+        <div class="container">
+          <div class="organizer-logo">
+            <img src="images/logo.png" alt="CSE Society Logo"
+              style="height:80px; filter:drop-shadow(0 0 15px rgba(255,26,79,0.6)); border-radius:50%; border:2px solid #b81a44; margin-bottom:1rem;"
+              onerror="this.src='https://placehold.co/70x70/800000/ffffff?text=CSE'">
+          </div>
+          <div class="organizer-title"
+            style="font-family:'Cinzel', serif; font-size:1.6rem; color:#ff1a4f; margin-top:1rem; margin-bottom:0.8rem;">
+            Organized By</div>
+          <div class="organizer-text"
+            style="font-family:'Playfair Display', serif; font-size:1.15rem; color:#e0d0e0; line-height:1.6;"><strong
+              style="color:#ff1a4f; font-size:1.3rem;">CSE Society</strong><br>Department of Computer Science and
+            Engineering<br>Sylhet Engineering College</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Refined -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© CSE DAY 2K26 — Where Tech Meets Excellence</p>
+        <div class="magic-separator"></div>
+        <p style="font-size:0.7rem;">Sylhet Engineering College</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Countdown Timer (Revised)
+    function updateCountdown() {
+      const target = new Date(2026, 3, 7, 9, 0, 0);
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (86400000)) / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
+      document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+      document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById('minutes').innerText = mins < 10 ? '0' + mins : mins;
+      document.getElementById('seconds').innerText = secs < 10 ? '0' + secs : secs;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => { navMenu.classList.toggle('active'); hamburger.classList.toggle('active'); });
+    }
+    document.querySelectorAll('.nav-link').forEach(link => { link.addEventListener('click', () => { if (navMenu) navMenu.classList.remove('active'); }); });
+
+    // Magical Broom Sparkle Trail
+    function createSparkle(x, y) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'star';
+      sparkle.style.width = '3px';
+      sparkle.style.height = '3px';
+      sparkle.style.left = x + 'px';
+      sparkle.style.top = y + 'px';
+      sparkle.style.boxShadow = '0 0 8px #ff1a4f';
+      sparkle.style.background = '#fff';
+      sparkle.style.opacity = '1';
+      document.body.appendChild(sparkle);
+      setTimeout(() => { sparkle.style.opacity = '0'; sparkle.style.transform = 'translateY(10px)'; setTimeout(() => sparkle.remove(), 1000); }, 100);
+    }
+
+    const broom = document.getElementById('magicBroom');
+    if (broom) {
+      setInterval(() => {
+        const rect = broom.getBoundingClientRect();
+        createSparkle(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      }, 150);
+    }
+
+    // Scroll Reveal Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      observer.observe(el);
+    });
+
+    // Magical Stars & Particles
+    function createStars() {
+      const starsDiv = document.getElementById('starsContainer');
+      if (!starsDiv) return;
+      starsDiv.innerHTML = '';
+      for (let i = 0; i < 150; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 2.5;
+        star.style.width = size + 'px'; star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%'; star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 5 + 's';
+        starsDiv.appendChild(star);
+      }
+    }
+    createStars();
+  </script>
+</body>
+
+</html>

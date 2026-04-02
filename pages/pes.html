@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PES Mobile Tournament | CSE DAY 2K26</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .hp-hero { padding: 4rem 1.5rem 1rem; text-align: center; }
+    .hp-logo { max-width: 150px; margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(255,26,79,0.5)); border-radius: 50%; border: 3px solid #b81a44; }
+  </style>
+</head>
+<body>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- THE LEGENDARY FLYING BROOMSTICK (Restored High-Detail) -->
+<div class="broomstick" id="magicBroom">
+  <svg viewBox="0 0 512 512" style="filter: drop-shadow(0 0 10px rgba(255,26,79,0.3));">
+    <!-- Handle -->
+    <path d="M480 32c-17.7 0-32 14.3-32 32 0 4.1 1.1 7.9 2.9 11.4L208.6 317.7c-5.5-2.4-11.6-3.7-18.1-3.7-23.4 0-42.5 19.1-42.5 42.5s19.1 42.5 42.5 42.5 42.5-19.1 42.5-42.5c0-6.5-1.4-12.6-3.7-18.1L472.6 96.9c3.5 1.8 7.3 2.9 11.4 2.9 17.7 0 32-14.3 32-32s-14.3-32-32-32z" fill="#5d2f11" />
+    <!-- Bristles Layer 1 -->
+    <path d="M168 320c-40 0-80 20-100 60-20 40-20 90 10 110s90 10 110-10 20-90-20-160z" fill="#9e7e10" />
+    <!-- Bristles Layer 2 -->
+    <path d="M140 340c-30 0-60 15-75 45-15 30-15 70 5 85s70 5 85-5 15-70-15-125z" fill="#c9a11d" />
+    <!-- Twine -->
+    <rect x="175" y="325" width="40" height="15" rx="5" transform="rotate(-45 175 325)" fill="#b81a44" />
+  </svg>
+</div>
+
+<div class="main-wrapper">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="CSE Society" class="logo-img" onerror="this.src='https://placehold.co/50x50/800000/ffffff?text=CSE'">
+        <span class="logo-text">CSE Society</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <div class="close-menu" id="closeMenu">&times;</div>
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="programming.html" class="nav-link">Programming</a></li>
+        <li><a href="gaming.html" class="nav-link active">Gaming</a></li>
+        <li><a href="integration-bee.html" class="nav-link">Integration Bee</a></li>
+        <li><a href="cultural.html" class="nav-link">Cultural Night</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hp-hero reveal">
+      <img src="../images/pes_magic.png" alt="PES Logo" class="hp-logo" onerror="this.src='https://placehold.co/150x150/3e2723/ff1a4f?text=PES'">
+      <h1 class="glowing-text">⚡ PES Mobile Duel ⚡</h1>
+      <p style="font-size: 1.3rem; color: #e6d0dc; font-style: italic;">"Master the magical touch of football!"</p>
+      <p style="margin-top:0.5rem; font-size:1.1rem; color:#ff1a4f;">Entry Fee: 50 BDT | Platform: Mobile</p>
+    </section>
+    
+    <div class="detail-card reveal">
+      <h2>📖 Tournament Rules & Settings</h2>
+      <ul class="rules-list">
+        <li><strong>Mode:</strong> 1 vs 1 | Match Duration: 6 mins</li>
+        <li><strong>Settings:</strong> Difficulty: Regular/Professional (Decided by organizers) | Camera: Default</li>
+        <li><strong>Format:</strong> Knockout system | Single match per round (Final may be Best of 3)</li>
+        <li><strong>Team Selection:</strong> Any club or national team (Same selection allowed) | No custom squads</li>
+        <li><strong>Device:</strong> Bring your own mobile device. Mobile gameplay only.</li>
+        <li><strong>Internet:</strong> Shared WiFi/LAN will be provided.</li>
+        <li><strong>Fair Play:</strong> Hacks, bugs, or abusive behavior will result in disqualification.</li>
+        <li><strong>Draw Situations:</strong> Extra time and penalties decide the winner.</li>
+      </ul>
+      
+      <div style="text-align:center; margin-top:2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+        <button class="register-btn">⚔️ Register for PES</button>
+        <a href="../rulebooks/PESMobile_Rulebook.pdf" download class="register-btn" style="background:transparent; border-color:#ff1a4f; color:#ff1a4f;">📜 Download PDF Rulebook</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="magic-separator"></div>
+    <div style="color: #e0d0e0;">
+      <h3 style="font-family:'Cinzel'; font-size:1.4rem; color: #ff1a4f;">CSE Society</h3>
+      <p>Department of Computer Science and Engineering</p>
+      <p>Sylhet Engineering College</p>
+    </div>
+  </footer>
+</div>
+<script src="../script.js"></script>
+</body>
+</html>
