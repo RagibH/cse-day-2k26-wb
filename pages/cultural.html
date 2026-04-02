@@ -172,39 +172,7 @@
     </footer>
   </div>
 
-  <script>
-    // Mobile Menu Logic
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    const navOverlay = document.getElementById('navOverlay');
-    const closeMenu = document.getElementById('closeMenu');
-
-    function toggleMenu() {
-      navMenu.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-    }
-
-    if (hamburger) hamburger.addEventListener('click', toggleMenu);
-    if (navOverlay) navOverlay.addEventListener('click', toggleMenu);
-    if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
-
-    // Scroll Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      observer.observe(el);
-    });
-  </script>
+  <script src="../script.js"></script>
 </body>
 
 </html>
