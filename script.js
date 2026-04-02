@@ -35,11 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navOverlay) navOverlay.addEventListener('click', closeNav);
     if (closeMenu) closeMenu.addEventListener('click', closeNav);
 
-    // Auto-close menu when clicking a link
+    // Auto-close menu when clicking a link and enforce navigation
     document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu && navMenu.classList.contains('active')) closeNav();
+        link.addEventListener('click', (e) => {
+            e.stopPropagation(); // 🔥 THIS IS THE KEY FIX
+
+            if (navMenu && navMenu.classList.contains('active')) {
+                closeNav();
+            }
         });
+    });
+
+    // Force menu links clickable even if overlay remains in front
+    document.querySelectorAll('.nav-menu, .nav-menu *').forEach(el => {
+        el.style.pointerEvents = 'auto';
     });
 
     // Register button special actions (external forms)
@@ -189,14 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. SMOOTH INTERNAL SCROLLING
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const target = document.querySelector(targetId);
+
+        // Only prevent default IF target exists
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+        // else → allow normal navigation (IMPORTANT FIX)
     });
+});
 });

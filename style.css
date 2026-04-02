@@ -94,9 +94,9 @@ main {
   background: rgba(13, 6, 20, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(184, 26, 68, 0.3);
+  border-bottom: none;
   padding: 1rem 2rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
 }
 .nav-container {
   max-width: 1400px;
@@ -173,7 +173,7 @@ main {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 101;
+  z-index: 2001;
 }
 .hamburger span {
   width: 30px;
@@ -450,10 +450,21 @@ main {
   transition: opacity 0.4s ease;
 }
 .nav-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
+    opacity: 0.88 !important;
+    visibility: visible !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: none !important;
+  }
 
+  .nav-menu a:hover,
+  .nav-menu .nav-link:hover {
+    color: #ffb7cb !important;
+  }
+
+  .close-menu {
+    color: #ff5c8a !important;
+    text-shadow: 0 0 12px rgba(255, 26, 79, 0.9) !important;
+  }
 /* ULTIMATE RESPONSIVE REFINEMENT (v3) */
 html, body { overflow-x: hidden; width: 100%; position: relative;}
 .main-wrapper { overflow: hidden; width: 100%; position: relative;}
@@ -478,64 +489,69 @@ html, body { overflow-x: hidden; width: 100%; position: relative;}
 }
 
 @media (max-width: 768px) {
+
   .close-menu { 
-    display: block !important; 
-    position: absolute; 
-    top: 25px; 
-    right: 25px; 
-    font-size: 2.5rem; 
-    color: #ff1a4f; 
-    cursor: pointer; 
-    z-index: 1001;
-    line-height: 1;
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #ff1a4f;
+    cursor: pointer;
+    z-index: 1002;
   }
+
+  .hamburger {
+    display: flex;
+    z-index: 1003;
+  }
+
   .nav-menu {
     position: fixed;
-    right: -100%;
     top: 0;
-    flex-direction: column;
-    background: rgba(25, 0, 10, 0.98); 
-    backdrop-filter: blur(35px);
-    width: 280px; /* Simplified Width */
+    right: -100%;
+    width: 300px;
     height: 100vh;
-    padding: 6rem 1.5rem;
-    gap: 2rem;
-    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: -15px 0 40px rgba(0,0,0,0.9);
-    border-left: 2px solid rgba(255, 26, 79, 0.5);
-    border-radius: 40px 0 0 40px; 
-    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+
+    background: rgba(14, 5, 20, 0.98);
+    backdrop-filter: blur(20px);
+
+    transition: right 0.3s ease;
+    z-index: 1001;
   }
-  .nav-menu.active { right: 0; }
-  .hamburger { display: flex; }
-  
-  .detail-card { padding: 2.5rem; margin-bottom: 2.5rem; }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu a {
+    font-size: 1.4rem;
+    color: white;
+  }
+
 }
+@media (max-width: 768px) {
 
-@media (max-width: 600px) {
-  /* THE MAGICAL 2-COLUMN MOBILE GRID WITH X-AXIS MARGIN */
-  .explorer-grid { 
-    grid-template-columns: 1fr 1fr; 
-    column-gap: 0.8rem; 
-    row-gap: 1.2rem;
-    padding: 0 1.5rem; /* Increased X Margin for the Grid */
-    margin: 2.5rem auto;
+  .nav-menu {
+    display: none !important;
   }
-  .detail-card { 
-    padding: 1.2rem 0.8rem; 
-    border-radius: 18px; 
-    border-width: 3px; 
-    margin: 0 0.2rem; /* Subtle Extra Card Margin */
-  }
-  .detail-card h3 { font-size: 1.1rem !important; margin-top: 0.5rem; }
-  .live-icon { font-size: 2.2rem !important; margin-bottom: 0.5rem !important; }
-  .register-btn { font-size: 0.75rem !important; padding: 10px 12px !important; }
 
-  .glowing-text { font-size: 2.2rem; }
-  .navbar { padding: 0.8rem 1.2rem; }
-  .logo-text { font-size: 1.2rem; }
-  .logo-img { height: 42px; }
-  .broomstick { width: 100px; }
+  .nav-menu.active {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-overlay {
+    display: none !important;
+  }
+
 }
